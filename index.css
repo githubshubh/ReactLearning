@@ -5,12 +5,13 @@
 }
 
 .logo {
-    width: 250px;
+    width: 163px;
 }
 
 .nav-items > ul{
     display: flex;
     list-style-type: none;
+    
 }
 
 .nav-items > ul>li {
