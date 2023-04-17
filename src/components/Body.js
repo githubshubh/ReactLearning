@@ -2,6 +2,7 @@ import ResturantCard from "./ResturantCard";
 import { useEffect, useState } from "react";
 import resList from "./../utils/mockData"
 import {Link} from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const Body = () =>{
 
@@ -17,6 +18,11 @@ const Body = () =>{
        setFilteredResturants(data?.data?.cards[2]?.data?.data?.cards)})   
     },[])
 
+     const isOnline = useOnline();
+
+     if(!isOnline){
+      return <h1>You are offline</h1>
+     }
     return (
       <div className="body">
         <div className="filter">

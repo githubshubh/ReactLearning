@@ -1,18 +1,22 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
-import {createBrowserRouter , Outlet, RouterProvider} from "react-router-dom";
 import Contact from "./components/Contact";
 import ResturantMenu from "./components/ResturantMenu";
+import {createBrowserRouter , Outlet, RouterProvider} from "react-router-dom";
+import ClassBased from "./components/ClassComp";
+
+const LazyLoading = lazy(()=>import("./components/LazyLoading"))
 
 const AppLayout = ()=>{
     return (
         <div className="app">
            <Header />
            <Outlet />
+           <ClassBased />
         </div>
         
     )
@@ -39,7 +43,11 @@ const appRouter = createBrowserRouter([
             {
                 path : "/resturants/:resID",
                 element : <ResturantMenu />
-            }
+            },
+            {
+                path : "/lazyloading",
+                element : <Suspense fallback={<h1>Laoding Data</h1>}><LazyLoading /></Suspense>
+            },
         ]
     }
 ])

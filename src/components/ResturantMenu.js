@@ -9,7 +9,6 @@ const ResturantMenu = () =>{
     const [ resturantDetail, setResturantDetails ] = useState({});
 
     useEffect(()=>{
-        // getResturants();
          fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4743879&lng=77.50399039999999&restaurantId=" + params.resID + "&submitAction=ENTER")
          .then(res=>res.json())
          .then(data=>setResturantDetails(data))
