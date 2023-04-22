@@ -23,8 +23,8 @@ componentWillUnmount(){
 }
     render(){
         return (
-            <div className="classComp">
-                <h1>Class Based Component</h1>
+            <div className="bg-gray-700 text-cyan-100 text-center h-12 text">
+                <h1 className="py-3">@CopyRight to Shubham</h1>
             </div>
         )
     }

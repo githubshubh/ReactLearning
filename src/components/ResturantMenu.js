@@ -15,11 +15,11 @@ const ResturantMenu = () =>{
     },[])
     
     return (
-        <div className = "restMenu">
-            <h1>Resturant ID : {params.resID}</h1>
+        <div >
+            <h1 className="text-center text-xl font-bold">Resturant ID : {params.resID}</h1>
             <img alt="Resturant Img"src = {CDN_URL + resturantDetail?.data?.cards[0]?.card?.card?.info?.cloudinaryImageId} />
-            <h3> Name : {resturantDetail?.data?.cards[0]?.card?.card?.info?.name}</h3>
-            <div>
+            <h3 className="font-bold"> Name : {resturantDetail?.data?.cards[0]?.card?.card?.info?.name}</h3>
+            <div >
                 <h2>MENU</h2>
                 <div>
                     <ul>
